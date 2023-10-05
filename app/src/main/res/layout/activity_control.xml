@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Control"
+    android:background="#21303B">
+
+    <ImageButton
+        android:id="@+id/right"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="71dp"
+        android:layout_marginTop="139dp"
+        android:background="@drawable/button_background"
+        android:scaleType="fitXY"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:src="@drawable/ic_baseline_arrow_right_alt_24"
+        app:iconPadding="0dp"
+        app:layout_constraintStart_toEndOf="@+id/left"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/left"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="139dp"
+        android:background="#36CACC"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="⬅"
+        android:textSize="45dp"
+        android:textColor="@color/white"
+        app:backgroundTint="#36CACC"
+        app:iconPadding="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/back"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginTop="70dp"
+        android:background="#36CACC"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="⬇"
+        android:textSize="45dp"
+        android:textColor="@color/white"
+        app:backgroundTint="#36CACC"
+        app:iconPadding="0dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/forward" />
+
+    <Button
+        android:id="@+id/forward"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:layout_marginTop="69dp"
+        android:layout_marginEnd="171dp"
+        android:background="#36CACC"
+        android:insetTop="0dp"
+        android:insetBottom="0dp"
+        android:text="⬆"
+        android:textSize="45dp"
+        app:backgroundTint="#36CACC"
+        app:iconPadding="0dp"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

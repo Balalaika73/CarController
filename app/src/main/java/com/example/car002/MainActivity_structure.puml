@@ -1,0 +1,186 @@
+@startuml
+
+/' diagram meta data start
+config=StructureConfiguration;
+{
+  "projectClassification": {
+    "searchMode": "OpenProject", // OpenProject, AllProjects
+    "includedProjects": "",
+    "pathEndKeywords": "*.impl",
+    "isClientPath": "",
+    "isClientName": "",
+    "isTestPath": "",
+    "isTestName": "",
+    "isMappingPath": "",
+    "isMappingName": "",
+    "isDataAccessPath": "",
+    "isDataAccessName": "",
+    "isDataStructurePath": "",
+    "isDataStructureName": "",
+    "isInterfaceStructuresPath": "",
+    "isInterfaceStructuresName": "",
+    "isEntryPointPath": "",
+    "isEntryPointName": "",
+    "treatFinalFieldsAsMandatory": false
+  },
+  "graphRestriction": {
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "removeByInheritance": "", // inheritance/annotation based filtering is done in a second step
+    "removeByAnnotation": "",
+    "removeByClassPackage": "", // cleanup the graph after inheritance/annotation based filtering is done
+    "removeByClassName": "",
+    "cutMappings": false,
+    "cutEnum": true,
+    "cutTests": true,
+    "cutClient": true,
+    "cutDataAccess": false,
+    "cutInterfaceStructures": false,
+    "cutDataStructures": false,
+    "cutGetterAndSetter": true,
+    "cutConstructors": true
+  },
+  "graphTraversal": {
+    "forwardDepth": 6,
+    "backwardDepth": 6,
+    "classPackageExcludeFilter": "",
+    "classPackageIncludeFilter": "",
+    "classNameExcludeFilter": "",
+    "classNameIncludeFilter": "",
+    "methodNameExcludeFilter": "",
+    "methodNameIncludeFilter": "",
+    "hideMappings": false,
+    "hideDataStructures": false,
+    "hidePrivateMethods": true,
+    "hideInterfaceCalls": true, // indirection: implementation -> interface (is hidden) -> implementation
+    "onlyShowApplicationEntryPoints": false, // root node is included
+    "useMethodCallsForStructureDiagram": "ForwardOnly" // ForwardOnly, BothDirections, No
+  },
+  "details": {
+    "aggregation": "GroupByClass", // ByClass, GroupByClass, None
+    "showClassGenericTypes": true,
+    "showMethods": true,
+    "showMethodParameterNames": true,
+    "showMethodParameterTypes": true,
+    "showMethodReturnType": true,
+    "showPackageLevels": 2,
+    "showDetailedClassStructure": true
+  },
+  "rootClass": "com.example.car002.MainActivity",
+  "extensionCallbackMethod": "" // qualified.class.name#methodName - signature: public static String method(String)
+}
+diagram meta data end '/
+
+
+
+digraph g {
+    rankdir="TB"
+    splines=polyline
+    
+
+'nodes 
+subgraph cluster_1322970774 { 
+   	label=example
+	labeljust=l
+	fillcolor="#ececec"
+	style=filled
+   
+   subgraph cluster_766754078 { 
+   	label=car002
+	labeljust=l
+	fillcolor="#d8d8d8"
+	style=filled
+   
+   BluetoothReceiver15107823[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)BluetoothReceiver</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   turnOnB: ImageButton [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ onReceive(context: Context, intent: Intent)</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+DeviceListAdapter15107823[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)DeviceListAdapter</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >-   devices: ArrayList&lt;BluetoothDevice&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   layoutInflater: LayoutInflater [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   resourceView: int [1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ getView(position: int, convertView: View, parent: ViewGroup): View</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+
+MainActivity15107823[
+	label=<<TABLE BORDER="1" CELLBORDER="0" CELLPADDING="4" CELLSPACING="0">
+<TR><TD ALIGN="LEFT" >(C)MainActivity</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >#   MAC: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   blD: BluetoothDevice [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   bluetoothAdapter: BluetoothAdapter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bluetoothReceiver: BluetoothReceiver [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   bluetoothSocket: BluetoothSocket [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   broadcastReceiver: BroadcastReceiver [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   broadcastReceiver1: BroadcastReceiver [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   deviceListAdapter: DeviceListAdapter [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   devices: ArrayList&lt;BluetoothDevice&gt; [0..*]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   isConnected: boolean [1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   itemClickListener: OnItemClickListener [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   listDev: ListView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   locationManager: LocationManager [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   outputStream: OutputStream [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   pb: ProgressBar [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >-   targetDevice: String [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   textView: TextView [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   toControl: Button [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   turnOnB: ImageButton [0..1]</TD></TR>
+<TR><TD ALIGN="LEFT" >#   turnOnG: ImageButton [0..1]</TD></TR>
+<HR/>
+<TR><TD ALIGN="LEFT" >+ BluetoothON(): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" >+ enableLocation()</TD></TR>
+<TR><TD ALIGN="LEFT" ># onActivityResult(requestCode: int, resultCode: int, data: Intent)</TD></TR>
+<TR><TD ALIGN="LEFT" ># onCreate(savedInstanceState: Bundle)</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onCreateOptionsMenu(menu: Menu): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" ># onDestroy()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onOptionsItemSelected(item: MenuItem): boolean</TD></TR>
+<TR><TD ALIGN="LEFT" ># onPause()</TD></TR>
+<TR><TD ALIGN="LEFT" >+ onRequestPermissionsResult(requestCode: int, permissions: String[], grantResults: int[])</TD></TR>
+<TR><TD ALIGN="LEFT" ># onResume()</TD></TR>
+<TR><TD ALIGN="LEFT" >- searchDeviceByName(deviceName: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- searchDevices()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showDeviceSearchDialog()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showListDevices()</TD></TR>
+<TR><TD ALIGN="LEFT" >- showMessage(m: String)</TD></TR>
+<TR><TD ALIGN="LEFT" >- startConnection(device: BluetoothDevice)</TD></TR>
+<TR><TD ALIGN="LEFT" >- updateBluetoothStatus()</TD></TR>
+</TABLE>>
+	style=filled
+	margin=0
+	shape=plaintext
+	fillcolor="#FFFFFF"
+];
+} 
+} 
+
+'edges    
+MainActivity15107823 -> BluetoothReceiver15107823[label="bluetoothReceiver
+[0..1]"];
+MainActivity15107823 -> DeviceListAdapter15107823[label="deviceListAdapter
+[0..1]"];
+    
+}
+@enduml

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/findevices"
+        android:title="Поиск устройств"/>
+    <item
+        android:id="@+id/findevice"
+        android:title="Найти устройство"/>
+    <item
+        android:id="@+id/deviceout"
+        android:title="Выход"/>
+</menu>
